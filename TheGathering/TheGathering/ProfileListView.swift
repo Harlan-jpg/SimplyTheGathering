@@ -9,6 +9,46 @@ import SwiftUI
 
 struct ProfileListView: View {
     let profiles: [DuelProfile]
+    let sampleProfiles = [
+        DuelProfile(
+            owner: HomeOwner(
+                ownersAddress: "456 Shadow Rd",
+                ownersName: "Jace Beleren",
+                ownersAge: 35
+            ),
+            address: HomeAddress(
+                address: "456 Shadow Rd",
+                zipcode: 94110,
+                cityName: "Ravnica",
+                stateName: "Izzet",
+                homeOwner: "Jace Beleren"
+            ),
+            game: Game(
+                isPlaying: true,
+                games: ["Magic: The Gathering"],
+                gameType: "TCG"
+            )
+        ),
+        DuelProfile(
+            owner: HomeOwner(
+                ownersAddress: "789 Duel Ln",
+                ownersName: "Liliana Vess",
+                ownersAge: 28
+            ),
+            address: HomeAddress(
+                address: "789 Duel Ln",
+                zipcode: 90210,
+                cityName: "Innistrad",
+                stateName: "Necropolis",
+                homeOwner: "Liliana Vess"
+            ),
+            game: Game(
+                isPlaying: false,
+                games: ["Magic: The Gathering", "Pokemon"],
+                gameType: "TCG"
+            )
+        )
+    ]
 
     var body: some View {
         ZStack {
@@ -78,4 +118,7 @@ struct ProfileListView: View {
     ]
 
     return ProfileListView(profiles: sampleProfiles)
+}
+#Preview {
+    ProfileListView(profiles: sampleProfiles)
 }
